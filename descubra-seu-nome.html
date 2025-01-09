@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra seu nome de Programador</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-blue': '#1E40AF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white">
+
+    <div class="flex">
+        <div>
+            <img src="imagens/figura1.jpg   " class="w-[500px] m-auto" alt="" >
+        </div>
+        <div class="text-center ml-20">
+            <h1 class="text-2xl">Descubra seu nome de</h1>
+            <h1 class="text-4xl bg-gradient-to-t from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">PROGRAMADOR</h1>
+            <div class="mt-5">
+                <label for="mes">Mês</label>
+                <select 
+                id="mes" 
+                class="text-black"
+                onchange="gerarNome()"
+                >
+                    <option value="1">Janeiro</option>
+                    <option value="2">Fevereiro</option>
+                    <option value="3">Março</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Maio</option>
+                    <option value="6">Junho</option>
+                    <option value="7">Julho</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select>
+                    <label for="dia">Dia</label>    
+                    <select id="dia" class="text-black">  
+                    </select>
+                    <script>
+                        const daySelect = document.getElementById('dia');
+                        for (let i = 1; i <= 31; i++) {
+                            const option = document.createElement('option');
+                            option.value = i;
+                            option.textContent = i;
+                            daySelect.appendChild(option);
+                        }
+                    </script>
+            </div>
+            <button class="mt-4 m-4 bg-blue-500 text-white px-4 py-2 rounded" type="button" onclick="mostrarNome()">Descubra Agora </button>
+            <p id="resultado"></p>
+        </div> 
+        
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
